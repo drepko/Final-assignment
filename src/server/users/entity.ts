@@ -41,15 +41,14 @@ export default class User extends BaseEntity {
     return bcrypt.compare(rawPassword, this.password)
   }
 
-  @OneToMany(_ => Ticket, ticket => ticket.user)
+  @OneToMany(_ => Ticket, ticket => ticket.user, {eager:true})
   tickets: Ticket[]
 
-  @OneToMany(_ => Comment, comment => comment.user)
+  @OneToMany(_ => Comment, comment => comment.user, {eager:true})
   comments: Comment[]
 
-  @OneToMany(_ => Event, event => event.user)
+  @OneToMany(_ => Event, event => event.user, {eager:true})
   events: Event[]
-
 
 }
 

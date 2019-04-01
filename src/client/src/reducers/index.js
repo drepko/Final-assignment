@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 import events from './events'
-//import ad from './ad'
-
+import event from './event'
 
 export default combineReducers({
-    events
+    events,
+    event
 })
 

@@ -1,5 +1,5 @@
 import { JsonController, Post, Body, HttpCode, Get, Param, Put, NotFoundError} from 'routing-controllers'
-import Events from './entity'
+import Event from './entity'
 
 @JsonController()
 export default class EventsController {
@@ -7,14 +7,14 @@ export default class EventsController {
 @Post('/events')
 @HttpCode(201)
 CreateEvent(
-    @Body() event: Events
+    @Body() event: Event
 ) {
     return event.save()
 }
 
 @Get('/events')
 async getAllEvents() {
-    const events = await Events.find()
+    const events = await Event.find()
     return events
     // return ads.map(ad => {
     //  //const {title, description} = ad
@@ -29,20 +29,20 @@ async getAllEvents() {
 getEvent(
     @Param('id') id: number
 ) {
-    return Events.findOne(id)
+    return Event.findOne(id)
 }
 
 @Put('/events/:id')
 async updateEvent(
     @Param('id') id: number,
-    @Body() update: Partial<Events>
+    @Body() update: Partial<Event>
 ) {
-    const events = await Events.findOne(id)
+    const events = await Event.findOne(id)
     if(!events) {
         throw new NotFoundError('Sorry, this ad does not excist')
     } 
     else {
-        Events.merge(events, update).save()
+        Event.merge(events, update).save()
     }
 }
 

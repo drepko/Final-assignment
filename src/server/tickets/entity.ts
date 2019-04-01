@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, Timestamp } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsString} from 'class-validator'
 import Event from '../events/entity'
@@ -21,6 +21,9 @@ import User from '../users/entity'
     @IsString()
     @Column('text', {nullable:false})
     description: string
+
+    @Column('timestamp', {default: () => "CURRENT_TIMESTAMP"})
+    time: Timestamp
 
     @ManyToOne(_ => Event, event => event.tickets)
     event: Event

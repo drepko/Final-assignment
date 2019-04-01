@@ -4,7 +4,7 @@ import EventListContainer from './components/EventListContainer'
 import store from './store'
 import {Provider} from 'react-redux'
 import { Route } from 'react-router-dom'
-// import AdDetailsContainer from './components/adDetailContainer'
+import EventDetailContainer from './components/EventDetailContainer'
 // import CreateAdFormContainer from './components/createAdFormContainer'
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
         <div>
           <Route path="/" exact component={EventListContainer} />
           {/* <Route path="/" exact component={CreateAdFormContainer} /> */}
-          {/* <Route path="/ads/:id" component={AdDetailsContainer} /> */}
+          <Route path="/events/:id" component={EventDetailContainer} />
         </div>
       </Provider>
 

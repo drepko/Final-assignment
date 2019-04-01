@@ -11,8 +11,8 @@ export default function EventList(props) {
 
         {props.events.map(event =>
             <li key={event.id}>
-                <Link to={`/events/${event.id}`}><h3>{event.name}</h3></Link>
-                <img src = {event.picture}/>
+                <h3>{event.name}</h3>
+                <Link to={`/events/${event.id}`}><img src = {event.picture}/></Link>
 
 
             </li>
