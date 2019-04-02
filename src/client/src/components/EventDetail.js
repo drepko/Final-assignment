@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
+import CreateTicketFormContainer from './CreateTicketFormContainer';
 
 class EventDetail extends React.Component{
 //export default function EventDetail(props) {
@@ -26,6 +27,7 @@ class EventDetail extends React.Component{
                         </li>
                         )}
                     </ul>
+                    <CreateTicketFormContainer event = {this.props.event}/>
                 </div>
             )
   }
