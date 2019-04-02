@@ -8,7 +8,6 @@ import EventDetailContainer from './components/EventDetailContainer'
 // import CreateAdFormContainer from './components/createAdFormContainer'
 import TicketDetailContainer from './components/TicketDetailContainer'
 
-
 class App extends Component {
   render() {
     return (
