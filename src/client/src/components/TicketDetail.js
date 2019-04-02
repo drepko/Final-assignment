@@ -7,19 +7,18 @@ export default function TicketDetail(props) {
     if (props.ticket === null || props.event === null) {
         return <div>Loading...</div>
     }
-
-    //const event = props.event.tickets.price
-
+    //have to add tickets per user in calculation. Something with eager true in enities.
+    //have to change color, depending on risk.
     let risk = 5;
     
     const allPrices = props.event.tickets.map(ticket => ticket.price)
-    console.log('all prices', allPrices)
+    //console.log('all prices', allPrices)
 
     const averagePrice = allPrices.reduce((a,b) => a + b, 0) / allPrices.length
-    console.log('average price', averagePrice)
+    //console.log('average price', averagePrice)
 
     const ticketPrice = props.ticket.price
-    console.log('ticketprice', ticketPrice)
+    //console.log('ticketprice', ticketPrice)
 
     if(ticketPrice < averagePrice) {
         const difference =  ((averagePrice-ticketPrice)/averagePrice) * 100
@@ -35,7 +34,7 @@ export default function TicketDetail(props) {
     }
 
     const postingHour = new Date(props.ticket.time).getHours() 
-    console.log('postingtime', postingHour)
+    //console.log('postingtime', postingHour)
 
     if (postingHour > 9  && postingHour < 17) {
         risk -= 10
@@ -44,7 +43,7 @@ export default function TicketDetail(props) {
     }
 
     const numberOfComments = props.ticket.comments.length
-    console.log('number of comments', numberOfComments)
+    //console.log('number of comments', numberOfComments)
 
     if (numberOfComments > 3) {
         risk += 5

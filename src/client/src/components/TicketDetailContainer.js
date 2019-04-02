@@ -2,31 +2,22 @@ import React from 'react'
 import {connect} from 'react-redux'
 import TicketDetail from './TicketDetail'
 import { loadTicket } from '../actions/ticket'
-import { loadUser } from '../actions/users'
+//import { loadUser } from '../actions/users'
 
 class TicketDetailContainer extends React.Component {
 
   componentDidMount() {
     this.props.loadTicket(Number(this.props.match.params.id))
-    this.props.loadUser(3)
-  }
-
-  //event = this.props.event
- 
-
-  riskCalculator() {
-      return 60;
+    //this.props.loadUser(Number(this.props.match.params.id))
+    //have to figure out how to get the right param for user. Something with eager true in enities.
   }
 
   render() {
-      console.log(this.props.user)
-//console.log('TicketDetailContainer: aantal comments per ticket', this.comments)
     return (
 
     <div>
     <TicketDetail
       ticket={this.props.ticket}
-      risk = {this.riskCalculator()}
       event = {this.props.event}
       user = {this.props.user}
       />
@@ -41,4 +32,6 @@ const mapStateToProps = state => ({
   user: state.user
 })
 
-export default connect(mapStateToProps, {loadTicket, loadUser})(TicketDetailContainer)
+
+
+export default connect(mapStateToProps, {loadTicket})(TicketDetailContainer)

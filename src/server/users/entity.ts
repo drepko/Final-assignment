@@ -41,6 +41,7 @@ export default class User extends BaseEntity {
     return bcrypt.compare(rawPassword, this.password)
   }
 
+  //eager true uitgezet, want staat aan bij tickets.
   @OneToMany(_ => Ticket, ticket => ticket.user, {eager:true})
   tickets: Ticket[]
 

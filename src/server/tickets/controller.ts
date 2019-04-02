@@ -1,24 +1,28 @@
-import { JsonController, Post, Body, HttpCode, Param, NotFoundError, Get} from 'routing-controllers'
+import { JsonController, Post, Body, HttpCode, Param, NotFoundError, Get, Authorized, CurrentUser} from 'routing-controllers'
 import Ticket from './entity'
 import Event from '../events/entity'
+import User from '../users/entity'
 
 @JsonController()
 export default class TicketsController {
     
+    @Authorized()
     @Post('/events/:event_id/tickets')
     @HttpCode(201)
     async CreateTicket(
         @Body() ticket: Ticket,
-        @Param('event_id') eventId :number ,
+        @Param('event_id') eventId :number,
+        @CurrentUser() user: User
     ) {
         const event = await Event.findOne(eventId)
 
         if(!event) {
             throw new NotFoundError('Sorry, this event does not excist')
         }
-        const entity = await ticket.save()   
-        entity.event = event     
-        return entity.save()
+        const newticket = await ticket.save()   
+        newticket.event = event  
+        newticket.user = user   
+        return newticket.save()
     }
 
     @Get('/tickets')
@@ -28,14 +32,11 @@ export default class TicketsController {
     }
     
     @Get('/tickets/:id')
-    getTicket(
+    async getTicket(
         @Param('id') id: number
     ) {
-        return Ticket.findOne(id)
+        return await Ticket.findOne(id)
     }
-
-
-
 
 
 }

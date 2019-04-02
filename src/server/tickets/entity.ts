@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, Timestamp } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, Timestamp} from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
 import { IsString} from 'class-validator'
 import Event from '../events/entity'
@@ -31,7 +31,9 @@ import User from '../users/entity'
     @OneToMany(_ => Comment,comment => comment.ticket, {eager:true})
     comments: Comment[]
 
+    //eager true aangezet, om bijbehorende user op te vragen.
     @ManyToOne(_ => User, user => user.tickets)
     user: User
-    
+  
   }
+
