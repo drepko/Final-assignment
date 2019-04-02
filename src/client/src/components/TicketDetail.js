@@ -22,11 +22,11 @@ export default function TicketDetail(props) {
     console.log('ticketprice', ticketPrice)
 
     if(ticketPrice < averagePrice) {
-        const difference =  (ticketPrice/averagePrice) * 100
+        const difference =  ((averagePrice-ticketPrice)/averagePrice) * 100
         risk += difference
     }
     if (ticketPrice > averagePrice) {
-        const difference = (ticketPrice/averagePrice) * 100
+        const difference = ((ticketPrice-averagePrice)/averagePrice) * 100
         if(difference < 10) {
             risk -= difference
         } else {
