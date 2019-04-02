@@ -58,7 +58,7 @@ export default function TicketDetail(props) {
 
     return (
         <div>
-            <h1>Risk: {Math.floor(risk)}%</h1>
+            <h1>Calculated Fraud Risk: {Math.floor(risk)}%</h1>
             <h2>Ticket from </h2>
             <h3>Price €{props.ticket.price}</h3>
             <h3>{props.ticket.description}</h3>
@@ -70,3 +70,4 @@ export default function TicketDetail(props) {
         </div>
     )  
 }
+

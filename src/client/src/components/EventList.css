@@ -2,3 +2,15 @@
     height: 150px;
     width: 150px;
 }
+
+.events-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+.events-flex>* {
+    flex: 1 1 80px;
+}

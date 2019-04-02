@@ -8,19 +8,22 @@ export default function EventList(props) {
     if (props.events === null) {
         return <div>Loading...</div>
     }
-    return <ul>
+    return (
+    <div class = 'events-flex'>
+    {/* <ul> */}
 
         {props.events.map(event =>
-            <li key={event.id}>
+            // <li key={event.id}>
+                <div>
                 <h3>{event.name}</h3>
                 <Link to={`/events/${event.id}`}><img class = 'event-logo'src = {event.picture}/></Link>
+                </div>
 
-
-            </li>
+            // </li>
         )
         }
-    </ul>
-
-}
+    {/* </ul> */}
+    </div>
+    )}
 
 
