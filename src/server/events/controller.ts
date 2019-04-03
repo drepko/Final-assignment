@@ -10,11 +10,11 @@ export default class EventsController {
 @HttpCode(201)
 async CreateEvent(
     @CurrentUser() user: User,
-    @Body() Event
+    @Body() event: Event
 ) {
-    const newevent = await Event.create().save()
-    newevent.user = user
-    return newevent.save()
+    
+    event.user = user
+    return event.save()
 }
 
 @Get('/events')

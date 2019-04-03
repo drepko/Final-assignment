@@ -33,7 +33,7 @@ class CreateEventFormContainer extends React.Component {
     }
 
     notSubmit = () => {
-        alert('Please login to post a ticket!')
+        alert('Please login to post an event!')
     }
 
     componentWillMount() {
