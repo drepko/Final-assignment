@@ -1,12 +1,14 @@
 import React from 'react'
 import CreateCommentFormContainer from './CreateCommentFormContainer';
 import './TicketDetail.css'
+import UpdateTicketFormContainer from './UpdateTicketFormContainer'
 
 export default function TicketDetail(props) {
 
     if (props.ticket === null || props.event === null) {
         return <div>Loading...</div>
     }
+    
     //have to add tickets per user in calculation. Something with eager true in enities.
     //have to change color, depending on risk.
     let risk = 5;
@@ -42,6 +44,7 @@ export default function TicketDetail(props) {
         risk += 10
     }
 
+
     const numberOfComments = props.ticket.comments.length
     //console.log('number of comments', numberOfComments)
 
@@ -71,7 +74,8 @@ export default function TicketDetail(props) {
             <h2>Comments</h2>
             {props.ticket.comments.map(comment => 
                 <p>{comment.textfield}</p>)}
-            <CreateCommentFormContainer/>   
+            <CreateCommentFormContainer/> 
+            <UpdateTicketFormContainer/>  
         </div>
     )  
 }

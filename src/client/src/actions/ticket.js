@@ -4,7 +4,7 @@ import {isExpired} from '../jwt'
 export const TICKET_FETCHED = 'TICKET_FETCHED'
 export const TICKET_CREATE_SUCCESS = 'TICKET_CREATE_SUCCESS'
 export const COMMENT_CREATE_SUCCESS = 'COMMENT_CREATE_SUCCESS'
-
+export const UPDATE_TICKET_SUCCESS = 'UPDATE_TICKET_SUCCESS'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -62,3 +62,22 @@ export const createComment = (data, ticket) => (dispatch, getState) => {
         })
         .catch(console.error)
 }
+
+const updateTicketSuccess = (ticket) => ({
+    type: UPDATE_TICKET_SUCCESS,
+    ticket
+  })
+
+export const updateTicket = (data, ticketId) => (dispatch, getState) => {
+    // const state = getState()
+    // const jwt = state.currentUser.jwt
+  
+    // if (isExpired(jwt)) return dispatch(logout())
+  
+    request
+      .put(`${baseUrl}/tickets/${ticketId}`)
+      //.set('Authorization', `Bearer ${jwt}`)
+      .send(data)
+      .then(dispatch(updateTicketSuccess(data)))
+      .catch(err => console.error(err))
+  }

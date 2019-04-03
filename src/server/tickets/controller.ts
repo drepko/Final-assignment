@@ -1,5 +1,6 @@
 import { JsonController, Post, Body, HttpCode, Param, NotFoundError, Get, 
-    Authorized, CurrentUser
+    Authorized, CurrentUser, Put, 
+    //ForbiddenError
 } from 'routing-controllers'
 import Ticket from './entity'
 import Event from '../events/entity'
@@ -9,11 +10,11 @@ import User from '../users/entity'
 export default class TicketsController {
     
     @Authorized()
-    @Post('/events/:event_id')
+    @Post('/events/:id')
     @HttpCode(201)
     async CreateTicket(
         @Body() ticket: Ticket,
-        @Param('event_id') eventId :number,
+        @Param('id') eventId :number,
         @CurrentUser() user: User
     ) {
         const event = await Event.findOne(eventId)
@@ -41,5 +42,30 @@ export default class TicketsController {
     }
 
 
+
+    //@Authorized()
+    @Put('/tickets/:id')
+    async updateTicket(
+      //@CurrentUser() User,
+      @Param('id') id: number,
+      @Body() update: Partial<Ticket>
+    ) {
+      const ticket = await Ticket.findOne(id)
+
+      if (!ticket) {
+        throw new NotFoundError(`Ticket does not exist`)
+      }
+  
+    //   const author = await User.findOne(ticket)
+    //   if (!author) {
+    //     throw new ForbiddenError(`You are not allowed to update this ticket`)
+    //   } 
+      else {
+        return Ticket.merge(ticket, update).save()
+      }
+    }
 }
+
+
+
 

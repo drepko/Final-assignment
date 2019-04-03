@@ -1,5 +1,6 @@
-import { TICKET_FETCHED } from '../actions/ticket'
+import { TICKET_FETCHED, UPDATE_TICKET_SUCCESS } from '../actions/ticket'
 import { COMMENT_CREATE_SUCCESS } from '../actions/ticket'
+//import {TICKET_CREATE_SUCCESS} from '../actions/ticket'
 
 export default (state = null, action = {}) => {
   switch (action.type) {
@@ -7,6 +8,11 @@ export default (state = null, action = {}) => {
       return action.ticket
       case COMMENT_CREATE_SUCCESS:
       return {...state, comments: state.comments.concat(action.comment)}
+      case UPDATE_TICKET_SUCCESS:
+      //return {...state, comments: state.comments}, action.ticket
+      //console.log('state', state)
+      //return {...state, comments: state.comments}, action.ticket
+      return {...state}, action.ticket
     default:
       return state
   }
