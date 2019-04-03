@@ -3,14 +3,37 @@
     width: 150px;
 }
 
-.events-flex{
+.parent-flex{
+    /* height: 90%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0 5% 0 5%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: center;
+
 
 }
 
 
-.events-flex>* {
+/* .events-flex>* {
     flex: 1 1 80px;
-}
+} */
+
+.child-flex {
+    flex: 1 0 33%; 
+    margin: auto;
+   
+
+  }
+
+  /* .child {
+    flex: 1 0 21%; /* explanation below */
+    /* margin: 5px;
+    height: 100px;
+    background-color: blue; */
+  /* } */ 

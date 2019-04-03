@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { createTicket } from '../actions/ticket'
 import TicketForm from './TicketForm'
 import { loadEvent } from '../actions/events'
+import {getUsers} from '../actions/users'
+import {userId} from '../jwt'
 
 class CreateTicketFormContainer extends React.Component {
     state = {
@@ -29,6 +31,11 @@ class CreateTicketFormContainer extends React.Component {
         //gechecked met 1 of het werkt, dan juiste eventId ophalen
     }
 
+    componentWillMount() {
+        if (this.props.authenticated) {
+          if (this.props.users === null) this.props.getUsers()
+        }
+      }
 
     render() {
         return (
@@ -41,8 +48,10 @@ class CreateTicketFormContainer extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     event: state.event,
-  })
-
-  export default connect(mapStateToProps, {loadEvent, createTicket})(CreateTicketFormContainer)
+    authenticated: state.currentUser !== null,
+    userId: state.currentUser && userId(state.currentUser.jwt),
+    users: state.users  })
+  
+  export default connect(mapStateToProps, {loadEvent, createTicket, getUsers})(CreateTicketFormContainer)

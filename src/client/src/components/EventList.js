@@ -9,12 +9,12 @@ export default function EventList(props) {
         return <div>Loading...</div>
     }
     return (
-    <div class = 'events-flex'>
+    <div className = 'parent-flex'>
     {/* <ul> */}
 
         {props.events.map(event =>
             // <li key={event.id}>
-                <div>
+                <div className = 'child-flex'>
                 <h3>{event.name}</h3>
                 <Link to={`/events/${event.id}`}><img class = 'event-logo'src = {event.picture}/></Link>
                 </div>

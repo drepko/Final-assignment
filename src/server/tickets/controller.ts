@@ -1,20 +1,20 @@
 import { JsonController, Post, Body, HttpCode, Param, NotFoundError, Get, 
-    //Authorized, CurrentUser
+    Authorized, CurrentUser
 } from 'routing-controllers'
 import Ticket from './entity'
 import Event from '../events/entity'
-//import User from '../users/entity'
+import User from '../users/entity'
 
 @JsonController()
 export default class TicketsController {
     
-    //@Authorized()
+    @Authorized()
     @Post('/events/:event_id')
     @HttpCode(201)
     async CreateTicket(
         @Body() ticket: Ticket,
         @Param('event_id') eventId :number,
-       // @CurrentUser() user: User
+        @CurrentUser() user: User
     ) {
         const event = await Event.findOne(eventId)
 
@@ -23,7 +23,7 @@ export default class TicketsController {
         }
         const newticket = await ticket.save()   
         newticket.event = event  
-        //newticket.user = user   
+        newticket.user = user   
         return newticket.save()
     }
 
