@@ -113,6 +113,7 @@ export const signup = (email, password) => (dispatch) =>
 export const getUsers = () => (dispatch, getState) => {
   const state = getState()
   if (!state.currentUser) return null
+
   const jwt = state.currentUser.jwt
 
   if (isExpired(jwt)) return dispatch(logout())

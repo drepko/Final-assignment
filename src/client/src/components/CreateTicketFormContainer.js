@@ -31,6 +31,10 @@ class CreateTicketFormContainer extends React.Component {
         //gechecked met 1 of het werkt, dan juiste eventId ophalen
     }
 
+    notSubmit = () => {
+        alert('Please login to post a ticket')
+    }
+
     componentWillMount() {
         if (this.props.authenticated) {
           if (this.props.users === null) this.props.getUsers()
@@ -41,9 +45,10 @@ class CreateTicketFormContainer extends React.Component {
         return (
 
             <TicketForm
-                onSubmit={this.onSubmit}
+                onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
                 onChange={this.onChange}
                 formValues={this.state}
+                authenticated = {this.props.authenticated}
             />)
     }
 }

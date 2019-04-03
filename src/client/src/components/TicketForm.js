@@ -26,7 +26,6 @@ export default function TicketForm(props) {
             name="description"
             value={props.formValues.description}
         />
-
         <input type="submit" value="POST TICKET" />
     </form>
 }
