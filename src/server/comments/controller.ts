@@ -2,7 +2,7 @@ import { JsonController, Post, Body, HttpCode, Param, NotFoundError, Get,
     Authorized, CurrentUser
 } from 'routing-controllers'
 import Ticket from '../tickets/entity'
-import Event from '../events/entity'
+//import Event from '../events/entity'
 import Comment from './entity'
 import User from '../users/entity'
 
@@ -14,14 +14,14 @@ export default class CommentsController {
     @HttpCode(201)
     async CreateComment(
         @Body() comment: Comment,
-        @Param('event_id') eventId :number,
+        //@Param('event_id') eventId :number,
         @Param('ticket_id') ticketId :number,
         @CurrentUser() user: User
     ) {
-        const event = await Event.findOne(eventId)
-        if(!event) {
-            throw new NotFoundError('Sorry, this event does not excist')
-        }
+        //const event = await Event.findOne(eventId)
+        // if(!event) {
+        //     throw new NotFoundError('Sorry, this event does not excist')
+        // }
 
         const ticket = await Ticket.findOne(ticketId)
         if(!ticket) {

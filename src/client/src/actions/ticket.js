@@ -47,9 +47,15 @@ const commentCreateSuccess = comment => ({
     comment
 })
 
-export const createComment = (data, ticket) => dispatch => {
+export const createComment = (data, ticket) => (dispatch, getState) => {
+    const state = getState()
+    const jwt = state.currentUser.jwt
+  
+    if (isExpired(jwt)) return dispatch(logout())
+
     request
         .post(`${baseUrl}/tickets/${ticket}`)
+        .set('Authorization', `Bearer ${jwt}`)
         .send(data)
         .then(response => {
             dispatch(commentCreateSuccess(response.body))
