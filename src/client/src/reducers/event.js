@@ -6,9 +6,10 @@ export default (state = null, action = {}) => {
     case EVENT_FETCHED:
       return action.event
     case TICKET_CREATE_SUCCESS:
-        return {...state, ticket: [action.ticket] }
+        return {...state, tickets: state.tickets.concat(action.ticket)}
     default:
       return state
   }
 }
+
 
