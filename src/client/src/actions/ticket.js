@@ -1,6 +1,7 @@
 import request from 'superagent'
 export const TICKET_FETCHED = 'TICKET_FETCHED'
 export const TICKET_CREATE_SUCCESS = 'TICKET_CREATE_SUCCESS'
+export const COMMENT_CREATE_SUCCESS = 'COMMENT_CREATE_SUCCESS'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -33,4 +34,17 @@ export const createTicket = (data, event) => dispatch => {
         .catch(console.error)
 }
 
+const commentCreateSuccess = comment => ({
+    type: COMMENT_CREATE_SUCCESS,
+    comment
+})
 
+export const createComment = (data, ticket) => dispatch => {
+    request
+        .post(`${baseUrl}/tickets/${ticket}`)
+        .send(data)
+        .then(response => {
+            dispatch(commentCreateSuccess(response.body))
+        })
+        .catch(console.error)
+}

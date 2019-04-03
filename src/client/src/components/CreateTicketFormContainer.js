@@ -4,7 +4,7 @@ import { createTicket } from '../actions/ticket'
 import TicketForm from './TicketForm'
 import { loadEvent } from '../actions/events'
 
-class CreateAdFormContainer extends React.Component {
+class CreateTicketFormContainer extends React.Component {
     state = {
         picture: '',
         price: '',
@@ -45,4 +45,4 @@ const mapStateToProps = state => ({
     event: state.event,
   })
 
-  export default connect(mapStateToProps, {loadEvent, createTicket})(CreateAdFormContainer)
+  export default connect(mapStateToProps, {loadEvent, createTicket})(CreateTicketFormContainer)

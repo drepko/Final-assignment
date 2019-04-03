@@ -5,7 +5,7 @@ import ticket from './ticket'
 import users from './users'
 import login from './login'
 import signup from './signup'
-//import user from './user'
+import user from './user'
 
 export default combineReducers({
     events,
@@ -13,7 +13,7 @@ export default combineReducers({
     ticket,
     users,
     login,
-    signup
-    //user
+    signup,
+    user
 })
 

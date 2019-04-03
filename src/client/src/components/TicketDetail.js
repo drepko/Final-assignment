@@ -1,6 +1,5 @@
 import React from 'react'
-
-
+import CreateCommentFormContainer from './CreateCommentFormContainer';
 
 export default function TicketDetail(props) {
 
@@ -67,6 +66,7 @@ export default function TicketDetail(props) {
             <h2>Comments</h2>
             {props.ticket.comments.map(comment => 
                 <p>{comment.textfield}</p>)}
+            <CreateCommentFormContainer/>   
         </div>
     )  
 }

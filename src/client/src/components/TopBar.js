@@ -31,10 +31,10 @@ const TopBar = (props) => {
           //location.pathname.indexOf('login') > 0 &&
           <Button color="inherit" onClick={() => history.push('/signup')}>Sign up</Button>
         }
-        {/* { 
-          //location.pathname.indexOf('games/') > 0 &&
-          <Button color="inherit" onClick={() => history.push('/games')}>All Games</Button>
-        } */}
+        { 
+          //location.pathname.indexOf('events/') > 0 &&
+          <Button color="inherit" onClick={() => history.push('/')}>All Events</Button>
+        }
         { user &&
           ///games$/.test(location.pathname) &&
           <Button color="inherit" onClick={() => history.push('/logout')}>Log out</Button>
