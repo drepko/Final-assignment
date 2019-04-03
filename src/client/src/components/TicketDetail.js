@@ -52,9 +52,9 @@ export default function TicketDetail(props) {
         risk += 5
     }
 
-    const user = props.user
-    console.log('user', user)
-
+    const users = props.users
+    console.log('users', users)
+   
     if (risk > 95) {
         risk = 95
     }
@@ -66,8 +66,6 @@ export default function TicketDetail(props) {
     return (
         <div>
             <h1 style = {risk<30? {border: '5px solid green'}: risk > 70? {border: '5px solid red'}: {border: '5px solid yellow'}}>Fraud Risk: {Math.floor(risk)}%</h1>
-
-            {/* <h1 style = {risk<30? {borderBottomColor:'green'}: risk > 70? {borderBottomColor:'red'}: {borderBottomColor:'yellow'}}>Fraud Risk: {Math.floor(risk)}%</h1> */}
             <h2>Ticket from </h2>
             <h3>Price €{props.ticket.price}</h3>
             <h3>{props.ticket.description}</h3>

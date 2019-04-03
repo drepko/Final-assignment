@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import TicketDetail from './TicketDetail'
 import { loadTicket } from '../actions/ticket'
-//import { loadUser } from '../actions/users'
+import {getUsers} from '../actions/users'
 
 class TicketDetailContainer extends React.Component {
 
@@ -19,7 +19,7 @@ class TicketDetailContainer extends React.Component {
     <TicketDetail
       ticket={this.props.ticket}
       event = {this.props.event}
-      user = {this.props.user}
+      users = {this.props.users}
       />
     </div>)
   }
@@ -29,9 +29,9 @@ class TicketDetailContainer extends React.Component {
 const mapStateToProps = state => ({
   ticket: state.ticket,
   event: state.event,
-  user: state.user
+  users: state.users
 })
 
 
 
-export default connect(mapStateToProps, {loadTicket})(TicketDetailContainer)
+export default connect(mapStateToProps, {loadTicket, getUsers})(TicketDetailContainer)

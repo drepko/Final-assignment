@@ -18,6 +18,7 @@ async CreateEvent(
 }
 
 @Get('/events')
+
 async getAllEvents() {
     const events = await Event.find()
     return events

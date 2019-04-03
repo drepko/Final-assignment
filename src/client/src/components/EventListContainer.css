@@ -1,0 +1,11 @@
+.eventcontainer {
+    margin: 5% 15% 5% 15%;
+    position: center;
+}
+
+#eventform {
+    margin-bottom: 5%;
+    margin-left: 10%;
+    position: center;
+    align-self: center
+}

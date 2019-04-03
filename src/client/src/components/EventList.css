@@ -15,8 +15,8 @@
     justify-content: center;
     flex-flow: row wrap;
     align-content: center;
-
-
+    padding: 0 5% 0 5%;
+    margin-bottom: 5%;
 }
 
 
@@ -26,7 +26,7 @@
 
 .child-flex {
     flex: 1 0 33%; 
-    margin: auto;
+    /* margin: auto; */
    
 
   }

@@ -30,4 +30,7 @@ export default class UserController {
   allUsers() {
     return User.find()
   }
+
 }
+
+
