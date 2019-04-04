@@ -19,7 +19,6 @@ export const loadEvents = () => (dispatch, getState) => {
         .then(response => {
             dispatch(eventsFetched(response.body))
         })
-        //.then(response => console.log(response.body))
         .catch(console.error)
 }
 
@@ -33,7 +32,6 @@ export const loadEvent = (id) => (dispatch, getState) => {
         .then(response => {
             dispatch(eventFetched(response.body))
         })
-        //.then(res => console.log('load ad action creator',res.body))
         .catch(console.error)
 }
 

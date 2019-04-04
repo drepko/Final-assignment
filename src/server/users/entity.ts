@@ -42,7 +42,7 @@ export default class User extends BaseEntity {
   }
 
   //eager true uitgezet, want staat aan bij tickets.
-  @OneToMany(_ => Ticket, ticket => ticket.user, {eager: true})
+  @OneToMany(_ => Ticket, ticket => ticket.user)
   tickets: Ticket[]
 
   @OneToMany(_ => Comment, comment => comment.user, {eager:true})

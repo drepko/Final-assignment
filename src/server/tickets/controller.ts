@@ -38,6 +38,8 @@ export default class TicketsController {
     async getTicket(
         @Param('id') id: number
     ) {
+        const user = await User.findOne({where: {user_id: id },  relations: ['tickets'] })
+        console.log('user', user)
         return await Ticket.findOne(id)
     }
 

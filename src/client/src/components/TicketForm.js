@@ -1,7 +1,8 @@
 import React from 'react'
 
 export default function TicketForm(props) {
-    return <form onSubmit={props.onSubmit}>
+    return <form 
+        onSubmit={props.formValues.price && props.formValues.description && props.onSubmit}>
 
         Picture:<br/>
         <input
