@@ -32,7 +32,7 @@ class UpdateTicketFormContainer extends React.Component {
     }
 
     notSubmit = () => {
-        alert('Please login to post a ticket!')
+        alert('Please login to edit this ticket!')
     }
 
     componentWillMount() {

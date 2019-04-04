@@ -9,10 +9,20 @@ export default (state = null, action = {}) => {
       case COMMENT_CREATE_SUCCESS:
       return {...state, comments: state.comments.concat(action.comment)}
       case UPDATE_TICKET_SUCCESS:
+      //console.log('state', state)
       //return {...state, comments: state.comments}, action.ticket
       //console.log('state', state)
       //return {...state, comments: state.comments}, action.ticket
-      return {...state}, action.ticket
+      //return {...state, ...state.comments}, action.ticket
+      //return {...state, ...state.comments}, action.ticket
+      if(action.ticket.picture) {
+        state.picture =  action.ticket.picture
+      }
+      if (action.ticket.description)
+      state.description = action.ticket.description
+      if (action.ticket.price) {
+        state.price = action.ticket.price
+      }
     default:
       return state
   }

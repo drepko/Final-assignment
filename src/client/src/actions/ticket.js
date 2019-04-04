@@ -73,9 +73,9 @@ export const updateTicket = (data, ticketId) => (dispatch, getState) => {
     // const jwt = state.currentUser.jwt
   
     // if (isExpired(jwt)) return dispatch(logout())
-  
+   //console.log('data', data)
     request
-      .put(`${baseUrl}/tickets/${ticketId}`)
+      .patch(`${baseUrl}/tickets/${ticketId}`)
       //.set('Authorization', `Bearer ${jwt}`)
       .send(data)
       .then(dispatch(updateTicketSuccess(data)))

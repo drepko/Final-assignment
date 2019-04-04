@@ -54,7 +54,16 @@ export default function TicketDetail(props) {
 
     const users = props.users
     console.log('users', users)
-   
+
+    // const usersprops = Object.keys(users).map(us => us.ticket)
+    // console.log('userprops', usersprops)
+
+    // Object.keys(users).forEach(function(key) {
+
+    //     console.log(key, users[key.ticket]);
+      
+    //   });
+        
     if (risk > 95) {
         risk = 95
     }

@@ -31,6 +31,16 @@ export default class UserController {
     return User.find()
   }
 
+  //new get request to get user in ticket route for risk calculation
+  // @Get('/tickets/:id')
+  // getTicketUser(
+  //   @Param('id') id: number
+  // ) {
+  //   return User.find({relations: ['tickets', 'users'],
+  //   where: { user_id: { id: id } },})
+
+  // }  
+
 }
 
 

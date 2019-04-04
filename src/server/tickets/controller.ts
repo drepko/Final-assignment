@@ -1,5 +1,5 @@
 import { JsonController, Post, Body, HttpCode, Param, NotFoundError, Get, 
-    Authorized, CurrentUser, Put, 
+    Authorized, CurrentUser, Patch, 
     //ForbiddenError
 } from 'routing-controllers'
 import Ticket from './entity'
@@ -44,7 +44,7 @@ export default class TicketsController {
 
 
     //@Authorized()
-    @Put('/tickets/:id')
+    @Patch('/tickets/:id')
     async updateTicket(
       //@CurrentUser() User,
       @Param('id') id: number,

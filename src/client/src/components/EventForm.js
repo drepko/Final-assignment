@@ -8,7 +8,7 @@ export default function EventForm(props) {
             onChange={props.onChange}
             type="text"
             name="name"
-            value={props.formValues.date}
+            value={props.formValues.name}
         />
 
         Description:
@@ -22,28 +22,36 @@ export default function EventForm(props) {
         Picture:
         <input
             onChange={props.onChange}
-            type="text"
+            type="url"
             name="picture"
-            value={props.formValues.date}
+            value={props.formValues.picture}
         />
 
         Start:
         <input
             onChange={props.onChange}
-            type="text"
+            type="date"
             name="start"
-            value={props.formValues.date}
+            value={props.formValues.start}
         />
 
         End:
         <input
             onChange={props.onChange}
-            type="text"
+            type="date"
             name="end"
-            value={props.formValues.date}
+            value={props.formValues.end}
         />
-
         <input type="submit" value="POST EVENT" />
+
+        {
+            !props.formValues.name | !props.formValues.description | 
+            !props.formValues.picture | !props.formValues.start |
+            !props.formValues.end &&
+     
+            <p style={{ color: 'red' }}>This form is not complete!</p>
+            
+        }
     </form>
 }
 

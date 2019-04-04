@@ -33,7 +33,11 @@ import User from '../users/entity'
 
     //eager true aangezet, om bijbehorende user op te vragen.
     @ManyToOne(_ => User, user => user.tickets)
-    user: User
-  
+    user: User;
+
+    // @ManyToOne(_ => User)
+    // @JoinColumn({name: 'user_id', referencedColumnName: 'id'})
+    // user: User;
+    
   }
 
