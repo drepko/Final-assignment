@@ -13,20 +13,21 @@ class EventListContainer extends React.Component {
 
   render() {
     return (
-      <div>
-    <div className = 'eventcontainer'>
-    <EventList events={this.props.events}
-    />
-    </div>
-    <div id = "eventform">
-    <CreateEventFormContainer />  
-    </div>
-    </div>
-    )}
+      <div className = 'events'>
+        <div className='eventcontainer'>
+          <EventList events={this.props.events}
+          />
+        </div>
+        <div id="eventform">
+          <CreateEventFormContainer />
+        </div>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => ({
   events: state.events
 })
 
-export default connect(mapStateToProps, { loadEvents})(EventListContainer)
+export default connect(mapStateToProps, { loadEvents })(EventListContainer)

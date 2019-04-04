@@ -7,11 +7,7 @@ import { updateTicket } from '../actions/ticket'
 import { loadTicket } from '../actions/ticket'
 
 class UpdateTicketFormContainer extends React.Component {
-    state = {
-        picture: '',
-        price: '',
-        description: '',
-    }
+    state = {}
 
     onChange = (event) => {
         this.setState({
@@ -21,11 +17,11 @@ class UpdateTicketFormContainer extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault()
-        this.setState({
-            picture: '',
-            price: '',
-            description: '',
-        })
+        // this.setState({
+        //     picture: '',
+        //     price: '',
+        //     description: '',
+        // })
         const id = this.props.ticket.id
         console.log('ticket id', id)
         this.props.updateTicket(this.state, id)
@@ -45,7 +41,8 @@ class UpdateTicketFormContainer extends React.Component {
         return (
 
             <UpdateTicketForm
-                onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
+                //onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
+                onSubmit = {this.onSubmit}
                 onChange={this.onChange}
                 formValues={this.state}
                 authenticated = {this.props.authenticated}

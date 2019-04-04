@@ -15,14 +15,21 @@ export default (state = null, action = {}) => {
       //return {...state, comments: state.comments}, action.ticket
       //return {...state, ...state.comments}, action.ticket
       //return {...state, ...state.comments}, action.ticket
-      if(action.ticket.picture) {
-        state.picture =  action.ticket.picture
+      // if(action.ticket.picture) {
+      //   state.picture =  action.ticket.picture
+      // }
+      // if (action.ticket.description)
+      // state.description = action.ticket.description
+      // if (action.ticket.price) {
+      //   state.price = action.ticket.price
+      // }
+      return {
+        ...state,
+        [action.ticket]: action
       }
-      if (action.ticket.description)
-      state.description = action.ticket.description
-      if (action.ticket.price) {
-        state.price = action.ticket.price
-      }
+      
+      
+
     default:
       return state
   }

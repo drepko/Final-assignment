@@ -5,9 +5,8 @@
 
 .ticketdetail{
     background-image: url('../images/background.jpg');
-    /* background-repeat: repeat-x;
-    background-repeat: repeat-x */
-
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .ticketdetail-flex {
