@@ -5,6 +5,7 @@ import TicketForm from './TicketForm'
 import { loadEvent } from '../actions/events'
 import {getUsers} from '../actions/users'
 import {userId} from '../jwt'
+import './CreateTicketFormContainer.css'
 
 class CreateTicketFormContainer extends React.Component {
     state = {
@@ -43,13 +44,14 @@ class CreateTicketFormContainer extends React.Component {
 
     render() {
         return (
-
-            <TicketForm
+            <div className = 'ticketform'>
+            <TicketForm 
                 onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
                 onChange={this.onChange}
                 formValues={this.state}
                 authenticated = {this.props.authenticated}
-            />)
+            />
+            </div>)
     }
 }
 

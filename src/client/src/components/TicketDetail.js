@@ -73,19 +73,25 @@ export default function TicketDetail(props) {
     }
 
     return (
-        <div>
-            <h1 style = {risk<30? {border: '5px solid green'}: risk > 70? {border: '5px solid red'}: {border: '5px solid yellow'}}>Fraud Risk: {Math.floor(risk)}%</h1>
+        <div className = 'ticketdetail'>
+        <div className = 'ticketdetail-flex'>
+        <div className = 'ticketdetail-child'>
+            <h2 style = {risk<30? {borderBottom: '5px solid #37B2AD'}: risk > 70? {borderBottom: '5px solid #E84858'}: {borderBottom: '5px solid #F7A000'}}>Fraud Risk: {Math.floor(risk)}%</h2>
             <h2>Ticket from </h2>
             <h3>Price €{props.ticket.price}</h3>
             <h3>{props.ticket.description}</h3>
             {props.ticket.picture &&
             <img className = 'ticketimage' src = {props.ticket.picture}/>
             }
-
+        </div>     
+        <div className = 'ticketdetail-child'>
+ 
             <h2>Comments</h2>
             {props.ticket.comments.map(comment => 
                 <p>{comment.textfield}</p>)}
             <CreateCommentFormContainer/> 
+        </div>    
+        </div>    
             <UpdateTicketFormContainer/>  
         </div>
     )  

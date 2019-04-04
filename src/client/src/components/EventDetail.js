@@ -12,18 +12,18 @@ class EventDetail extends React.Component{
             return <div>Loading...</div>
         }
             return (
-                <div>
+                <div className = 'eventdetail'>
                   <div className = 'detail-flex'> 
                     <div className = 'childdetail-flex'>
                     <h2>{this.props.event.name}</h2>
-                    <p>Description:{this.props.event.description}</p>
-                    <p>Start:{this.props.event.start}</p>
-                    <p>End:{this.props.event.end}</p>
-                    </div>
-
-                    <div className = 'childdetail-flex'>
-                    <img id = 'eventdetail-img' src = {this.props.event.picture}/>
-                    </div>
+                    <p>Description:<br/>
+                    {this.props.event.description}</p>
+                    <p>Start:<br/>
+                    {this.props.event.start}</p>
+                    <p>End:<br/>
+                    {this.props.event.end}</p>
+                    {/* <img id = 'eventdetail-img' src = {this.props.event.picture}/> */}
+                </div>
 
                     <div className = 'childdetail-flex'>
                     <h2>Available Tickets</h2>
@@ -32,7 +32,7 @@ class EventDetail extends React.Component{
                         <li key = {ticket.id}>
                             {/* <img src = {ticket.picture}/>
                             <p>{ticket.description}</p> */}
-                            <Link to={`/tickets/${ticket.id}`}><h3>Price: €{ticket.price}</h3></Link>
+                            <Link to={`/tickets/${ticket.id}`}><button className = 'ticketprice-button'>€{ticket.price}, -</button></Link>
                         </li>
                         )}
                     </ul>

@@ -2,3 +2,28 @@
     height: 150px;
     width: 150px;
 }
+
+.ticketdetail{
+    background-image: url('../images/background.jpg');
+    /* background-repeat: repeat-x;
+    background-repeat: repeat-x */
+
+}
+
+.ticketdetail-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+.ticketdetail-child {
+    margin: 30px;
+    border: dotted 5px white;
+    width: 200px;
+    height: 400px;
+    position: center;
+    padding: 10px;
+    justify-content: center
+}
