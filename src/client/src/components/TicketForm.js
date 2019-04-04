@@ -6,17 +6,17 @@ export default function TicketForm(props) {
         Picture:
         <input
             onChange={props.onChange}
-            type="text"
+            type="url"
             name="picture"
-            value={props.formValues.date}
+            value={props.formValues.picture}
         />
 
         Price:
         <input
             onChange={props.onChange}
-            type="text"
+            type="number"
             name="price"
-            value={props.formValues.date}
+            value={props.formValues.price}
         />
 
         Description:
@@ -27,6 +27,9 @@ export default function TicketForm(props) {
             value={props.formValues.description}
         />
         <input type="submit" value="POST TICKET" />
+        {!props.formValues.price | !props.formValues.description &&
+            <p style={{ color: 'red' }}>This form is not complete!</p>
+        }
     </form>
 }
 

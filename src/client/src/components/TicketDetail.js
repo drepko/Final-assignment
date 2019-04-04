@@ -78,7 +78,9 @@ export default function TicketDetail(props) {
             <h2>Ticket from </h2>
             <h3>Price €{props.ticket.price}</h3>
             <h3>{props.ticket.description}</h3>
+            {props.ticket.picture &&
             <img className = 'ticketimage' src = {props.ticket.picture}/>
+            }
 
             <h2>Comments</h2>
             {props.ticket.comments.map(comment => 
