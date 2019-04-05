@@ -49,7 +49,7 @@ export default function EventForm(props) {
             !props.formValues.picture | !props.formValues.start |
             !props.formValues.end &&
      
-            <p style={{ color: 'red' }}>This form is not complete!</p>
+            <p style={{ color: 'red'}}>This form is not complete!</p>
             
         }
     </form>

@@ -5,6 +5,7 @@ import { JsonController, Post, Body, HttpCode, Param, NotFoundError, Get,
 import Ticket from './entity'
 import Event from '../events/entity'
 import User from '../users/entity'
+//import { getRepository } from 'typeorm';
 
 @JsonController()
 export default class TicketsController {
@@ -35,11 +36,14 @@ export default class TicketsController {
     }
     
     @Get('/tickets/:id')
+    
     async getTicket(
         @Param('id') id: number
     ) {
-        const user = await User.findOne({where: {user_id: id },  relations: ['tickets'] })
-        console.log('user', user)
+        //const user = await User.findOne({where: {user_id: id },  relations: ['tickets'] })
+        //console.log('user', user)
+        //return user
+
         return await Ticket.findOne(id)
     }
 

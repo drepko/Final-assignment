@@ -97,7 +97,7 @@ export default function TicketDetail(props) {
                 <div className='ticketdetail-child'>
 
                     <h2>Edit ticket</h2>
-                    <p>Only author can do this!</p>
+                    <p>Only the author can do this!</p>
                     <UpdateTicketFormContainer />
                 </div>
             </div>
