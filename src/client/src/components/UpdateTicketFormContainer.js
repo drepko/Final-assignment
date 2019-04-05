@@ -28,7 +28,7 @@ class UpdateTicketFormContainer extends React.Component {
     }
 
     notSubmit = () => {
-        alert('Please login to edit this ticket!')
+        alert('You are not allowed to edit this ticket!')
     }
 
     componentWillMount() {
@@ -41,8 +41,7 @@ class UpdateTicketFormContainer extends React.Component {
         return (
 
             <UpdateTicketForm
-                //onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
-                onSubmit = {this.onSubmit}
+                onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
                 onChange={this.onChange}
                 formValues={this.state}
                 authenticated = {this.props.authenticated}

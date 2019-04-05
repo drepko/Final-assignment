@@ -40,7 +40,7 @@ class CreateCommentFormContainer extends React.Component {
         return (
 
             <CommentForm
-                onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
+                onSubmit={this.props.authenticated? this.onSubmit :this.notSubmit}
                 onChange={this.onChange}
                 formValues={this.state}
             />)

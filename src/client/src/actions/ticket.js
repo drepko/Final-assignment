@@ -69,14 +69,14 @@ const updateTicketSuccess = (ticket) => ({
   })
 
 export const updateTicket = (data, ticketId) => (dispatch, getState) => {
-    // const state = getState()
-    // const jwt = state.currentUser.jwt
+    const state = getState()
+    const jwt = state.currentUser.jwt
   
-    // if (isExpired(jwt)) return dispatch(logout())
+    if (isExpired(jwt)) return dispatch(logout())
    //console.log('data', data)
     request
       .patch(`${baseUrl}/tickets/${ticketId}`)
-      //.set('Authorization', `Bearer ${jwt}`)
+      .set('Authorization', `Bearer ${jwt}`)
       .send(data)
       .then(dispatch(updateTicketSuccess(data)))
       .catch(err => console.error(err))
