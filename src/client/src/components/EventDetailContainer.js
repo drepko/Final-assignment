@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import EventDetail from './EventDetail'
 import { loadEvent } from '../actions/events'
 
@@ -11,11 +11,11 @@ class EventDetailContainer extends React.Component {
 
   render() {
     return (
-    <div>
-    <EventDetail
-      event={this.props.event}
-      />
-    </div>)
+      <div>
+        <EventDetail
+          event={this.props.event}
+        />
+      </div>)
   }
 }
 
@@ -24,4 +24,4 @@ const mapStateToProps = state => ({
   event: state.event,
 })
 
-export default connect(mapStateToProps, {loadEvent})(EventDetailContainer)
+export default connect(mapStateToProps, { loadEvent })(EventDetailContainer)

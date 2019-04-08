@@ -77,13 +77,13 @@ export default function TicketDetail(props) {
             <div className='ticketdetail-flex'>
                 <div className='ticketdetail-child'>
                     <h2 style={risk < 30 ? { borderBottom: '5px solid #37B2AD' } : risk > 70 ? { borderBottom: '5px solid #E84858' } : { borderBottom: '5px solid #F7A000' }}>Risk: {Math.floor(risk)}%</h2>
-                    <p style = {{fontSize: '9px'}}>This is the risk we have calculated of this ticket being a fraud.</p>
-                    <p style = {{fontSize: '11px'}}>Price:<br/>
-                    {`€ ${props.ticket.price},-`}</p>
-                    <p style = {{fontSize: '11px'}}>Event:<br/>
-                    {props.event.name}</p>
-                    <p style = {{fontSize: '11px'}}>Description:<br/>
-                    {props.ticket.description}</p>
+                    <p style={{ fontSize: '9px' }}>This is the risk we have calculated of this ticket being a fraud.</p>
+                    <p style={{ fontSize: '11px' }}>Price:<br />
+                        {`€ ${props.ticket.price},-`}</p>
+                    <p style={{ fontSize: '11px' }}>Event:<br />
+                        {props.event.name}</p>
+                    <p style={{ fontSize: '11px' }}>Description:<br />
+                        {props.ticket.description}</p>
                     {props.ticket.picture &&
                         <img className='ticketimage' src={props.ticket.picture} />
                     }
@@ -93,14 +93,14 @@ export default function TicketDetail(props) {
                     <h2>Comments</h2>
                     <ul>
                         {props.ticket.comments.map(comment =>
-                            <li key={comment.id} style = {{fontSize: '11px'}}>{comment.textfield}</li>)}
+                            <li key={comment.id} style={{ fontSize: '11px' }}>{comment.textfield}</li>)}
                     </ul>
                     <CreateCommentFormContainer />
                 </div>
                 <div className='ticketdetail-child'>
 
                     <h2>Edit ticket</h2>
-                    <p style = {{fontSize: '9px'}}>Only the author can do this!</p>
+                    <p style={{ fontSize: '9px' }}>Only the author can do this!</p>
                     <UpdateTicketFormContainer />
                 </div>
             </div>

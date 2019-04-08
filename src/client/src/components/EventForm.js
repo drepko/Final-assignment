@@ -45,12 +45,12 @@ export default function EventForm(props) {
         <input type="submit" value="POST EVENT" />
 
         {
-            !props.formValues.name | !props.formValues.description | 
+            !props.formValues.name | !props.formValues.description |
             !props.formValues.picture | !props.formValues.start |
             !props.formValues.end &&
-     
-            <p style={{ color: 'red', textAlign: 'left', marginLeft: '10.5%'}}>This form is not complete!</p>
-            
+
+            <p style={{ color: 'red', textAlign: 'left', marginLeft: '10.5%' }}>This form is not complete!</p>
+
         }
     </form>
 }

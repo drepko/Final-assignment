@@ -1,6 +1,6 @@
 import request from 'superagent'
-import {logout} from './users'
-import {isExpired} from '../jwt'
+import { logout } from './users'
+import { isExpired } from '../jwt'
 export const TICKET_FETCHED = 'TICKET_FETCHED'
 export const TICKET_CREATE_SUCCESS = 'TICKET_CREATE_SUCCESS'
 export const COMMENT_CREATE_SUCCESS = 'COMMENT_CREATE_SUCCESS'
@@ -29,7 +29,7 @@ const ticketCreateSuccess = ticket => ({
 export const createTicket = (data, event) => (dispatch, getState) => {
     const state = getState()
     const jwt = state.currentUser.jwt
-  
+
     if (isExpired(jwt)) return dispatch(logout())
 
     request
@@ -50,7 +50,7 @@ const commentCreateSuccess = comment => ({
 export const createComment = (data, ticket) => (dispatch, getState) => {
     const state = getState()
     const jwt = state.currentUser.jwt
-  
+
     if (isExpired(jwt)) return dispatch(logout())
 
     request
@@ -66,18 +66,18 @@ export const createComment = (data, ticket) => (dispatch, getState) => {
 const updateTicketSuccess = (ticket) => ({
     type: UPDATE_TICKET_SUCCESS,
     ticket
-  })
+})
 
 export const updateTicket = (data, ticketId) => (dispatch, getState) => {
     const state = getState()
     const jwt = state.currentUser.jwt
-  
+
     if (isExpired(jwt)) return dispatch(logout())
-   //console.log('data', data)
+    //console.log('data', data)
     request
-      .patch(`${baseUrl}/tickets/${ticketId}`)
-      .set('Authorization', `Bearer ${jwt}`)
-      .send(data)
-      .then(dispatch(updateTicketSuccess(data)))
-      .catch(err => console.error(err))
-  }
+        .patch(`${baseUrl}/tickets/${ticketId}`)
+        .set('Authorization', `Bearer ${jwt}`)
+        .send(data)
+        .then(dispatch(updateTicketSuccess(data)))
+        .catch(err => console.error(err))
+}

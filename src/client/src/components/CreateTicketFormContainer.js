@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { createTicket } from '../actions/ticket'
 import TicketForm from './TicketForm'
 import { loadEvent } from '../actions/events'
-import {getUsers} from '../actions/users'
-import {userId} from '../jwt'
+import { getUsers } from '../actions/users'
+import { userId } from '../jwt'
 import './CreateTicketFormContainer.css'
 
 class CreateTicketFormContainer extends React.Component {
@@ -38,19 +38,19 @@ class CreateTicketFormContainer extends React.Component {
 
     componentWillMount() {
         if (this.props.authenticated) {
-          if (this.props.users === null) this.props.getUsers()
+            if (this.props.users === null) this.props.getUsers()
         }
-      }
+    }
 
     render() {
         return (
-            <div className = 'ticketform'>
-            <TicketForm 
-                onSubmit={this.props.authenticated? this.onSubmit: this.notSubmit}
-                onChange={this.onChange}
-                formValues={this.state}
-                authenticated = {this.props.authenticated}
-            />
+            <div className='ticketform'>
+                <TicketForm
+                    onSubmit={this.props.authenticated ? this.onSubmit : this.notSubmit}
+                    onChange={this.onChange}
+                    formValues={this.state}
+                    authenticated={this.props.authenticated}
+                />
             </div>)
     }
 }
@@ -59,6 +59,7 @@ const mapStateToProps = (state) => ({
     event: state.event,
     authenticated: state.currentUser !== null,
     userId: state.currentUser && userId(state.currentUser.jwt),
-    users: state.users  })
-  
-  export default connect(mapStateToProps, {loadEvent, createTicket, getUsers})(CreateTicketFormContainer)
+    users: state.users
+})
+
+export default connect(mapStateToProps, { loadEvent, createTicket, getUsers })(CreateTicketFormContainer)

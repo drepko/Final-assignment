@@ -48,7 +48,7 @@ class EventListContainer extends React.Component {
           <div class="outer">
             <div class="inner"><button id='backbutton' onClick={this.renderPrevItem}>BACK</button>
 
-            <div class="inner"><button id='nextbutton' onClick={this.renderNewItem}>NEXT</button></div>
+              <div class="inner"><button id='nextbutton' onClick={this.renderNewItem}>NEXT</button></div>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 import request from 'superagent'
-import {logout} from './users'
-import {isExpired} from '../jwt'
+import { logout } from './users'
+import { isExpired } from '../jwt'
 export const EVENTS_FETCHED = 'EVENTS_FETCHED'
 export const EVENT_FETCHED = 'EVENT_FETCHED'
 export const EVENT_CREATE_SUCCESS = 'EVENT_CREATE_SUCCESS'
@@ -36,7 +36,7 @@ export const loadEvent = (id) => (dispatch, getState) => {
 }
 
 
-const eventCreateSuccess = event=> ({
+const eventCreateSuccess = event => ({
     type: EVENT_CREATE_SUCCESS,
     event
 })
@@ -44,7 +44,7 @@ const eventCreateSuccess = event=> ({
 export const createEvent = (data) => (dispatch, getState) => {
     const state = getState()
     const jwt = state.currentUser.jwt
-  
+
     if (isExpired(jwt)) return dispatch(logout())
 
     request

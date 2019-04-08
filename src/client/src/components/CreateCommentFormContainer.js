@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CommentForm from './CommentForm'
 import { loadTicket, createComment } from '../actions/ticket'
-import {getUsers} from '../actions/users'
-import {userId} from '../jwt'
+import { getUsers } from '../actions/users'
+import { userId } from '../jwt'
 
 class CreateCommentFormContainer extends React.Component {
     state = {
@@ -12,9 +12,9 @@ class CreateCommentFormContainer extends React.Component {
 
     componentWillMount() {
         if (this.props.authenticated) {
-          if (this.props.users === null) this.props.getUsers()
+            if (this.props.users === null) this.props.getUsers()
         }
-      }
+    }
 
     onChange = (event) => {
         this.setState({
@@ -40,7 +40,7 @@ class CreateCommentFormContainer extends React.Component {
         return (
 
             <CommentForm
-                onSubmit={this.props.authenticated? this.onSubmit :this.notSubmit}
+                onSubmit={this.props.authenticated ? this.onSubmit : this.notSubmit}
                 onChange={this.onChange}
                 formValues={this.state}
             />)
@@ -52,6 +52,6 @@ const mapStateToProps = state => ({
     authenticated: state.currentUser !== null,
     userId: state.currentUser && userId(state.currentUser.jwt),
     users: state.users
-  })
+})
 
-  export default connect(mapStateToProps, {loadTicket, createComment, getUsers})(CreateCommentFormContainer)
+export default connect(mapStateToProps, { loadTicket, createComment, getUsers })(CreateCommentFormContainer)

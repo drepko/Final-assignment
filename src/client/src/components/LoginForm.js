@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react'
+import React, { PureComponent } from 'react'
 
 export default class LoginForm extends PureComponent {
 	state = {}
@@ -9,30 +9,30 @@ export default class LoginForm extends PureComponent {
 	}
 
 	handleChange = (event) => {
-    const {name, value} = event.target
+		const { name, value } = event.target
 
-    this.setState({
-      [name]: value
-    })
-  }
+		this.setState({
+			[name]: value
+		})
+	}
 
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<div>
-					<label htmlFor="email">Email</label><br/>
+					<label htmlFor="email">Email</label><br />
 					<input type="email" name="email" id="email" value={
 						this.state.email || ''
-					} onChange={ this.handleChange } />
+					} onChange={this.handleChange} />
 				</div>
-					<br/>
+				<br />
 				<div>
-					<label htmlFor="password">Password</label><br/>
+					<label htmlFor="password">Password</label><br />
 					<input type="password" name="password" id="password" value={
 						this.state.password || ''
-					} onChange={ this.handleChange } />
+					} onChange={this.handleChange} />
 				</div>
-				<br/>
+				<br />
 				<button type="submit">Login</button>
 			</form>
 		)

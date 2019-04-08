@@ -39,11 +39,11 @@ class EventDetail extends React.Component {
                     </div>
 
                     <div className='childdetail-flex'>
-                    <h2>Post a Ticket</h2>
+                        <h2>Post a Ticket</h2>
 
-                    <div id='post-ticketform'>
-                    <CreateTicketFormContainer event={this.props.event} />
-                </div>
+                        <div id='post-ticketform'>
+                            <CreateTicketFormContainer event={this.props.event} />
+                        </div>
                     </div>
                 </div >
 
