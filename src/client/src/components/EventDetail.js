@@ -5,7 +5,6 @@ import CreateTicketFormContainer from './CreateTicketFormContainer';
 import './EventDetail.css'
 
 class EventDetail extends React.Component {
-    //export default function EventDetail(props) {
 
     render() {
         if (this.props.event === null) {
@@ -22,7 +21,6 @@ class EventDetail extends React.Component {
                             {this.props.event.start}</p>
                         <p>End:<br />
                             {this.props.event.end}</p>
-                        {/* <img id = 'eventdetail-img' src = {this.props.event.picture}/> */}
                     </div>
 
                     <div className='childdetail-flex'>
@@ -30,8 +28,6 @@ class EventDetail extends React.Component {
                         <ul>
                             {this.props.event.tickets.map(ticket =>
                                 <li key={ticket.id}>
-                                    {/* <img src = {ticket.picture}/>
-                            <p>{ticket.description}</p> */}
                                     <Link to={`/tickets/${ticket.id}`}><button className='ticketprice-button'>€{ticket.price}, -</button></Link>
                                 </li>
                             )}

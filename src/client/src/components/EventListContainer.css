@@ -1,7 +1,5 @@
 .eventcontainer {
     margin: 5% 15% 5% 15%;
-    /* position: center; */
-    /* width:100%; */
     text-align: center;
 }
 
@@ -16,7 +14,6 @@
 
 #nextbutton{
     float: right;
-    /* margin-left: 80%; */
 }
 
 #backbutton{

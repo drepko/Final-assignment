@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button'
 import {withRouter} from 'react-router'
 import {userId} from '../jwt'
 import {connect} from 'react-redux'
-//import AccountIcon from '@material-ui/icons/AccountBox'
 import './TopBar.css'
 
 const TopBar = (props) => {
@@ -18,25 +17,18 @@ const TopBar = (props) => {
         <Typography variant="title" color="inherit" style={{flex: 1}}>
           SWAP TICKET
         </Typography>
-        {/* {
-          user &&
-          <Button color="inherit"><AccountIcon /> { user.firstName }</Button>
-        } */}
+
 
         { !user &&
-          //location.pathname.indexOf('signup') > 0 &&
           <Button color="inherit" onClick={() => history.push('/login')}>Login</Button>
         }
         { !user &&
-          //location.pathname.indexOf('login') > 0 &&
           <Button color="inherit" onClick={() => history.push('/signup')}>Sign up</Button>
         }
         { 
-          //location.pathname.indexOf('events/') > 0 &&
           <Button color="inherit" onClick={() => history.push('/')}>All Events</Button>
         }
         { 
-          ///events$/.test(location.pathname) &&
           <Button color="inherit" onClick={() => history.push('/logout')}>Log out</Button>
         }
       </Toolbar>

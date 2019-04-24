@@ -5,7 +5,6 @@ import { loadEvents } from '../actions/events'
 import CreateEventFormContainer from './CreateEventFormContainer'
 import './EventListContainer.css'
 import { transparent } from 'material-ui/styles/colors';
-//import Pagination from "react-js-pagination";
 
 class EventListContainer extends React.Component {
   constructor(props) {

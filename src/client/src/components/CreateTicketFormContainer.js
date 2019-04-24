@@ -5,7 +5,6 @@ import TicketForm from './TicketForm'
 import { loadEvent } from '../actions/events'
 import { getUsers } from '../actions/users'
 import { userId } from '../jwt'
-import './CreateTicketFormContainer.css'
 
 class CreateTicketFormContainer extends React.Component {
     state = {
@@ -29,7 +28,6 @@ class CreateTicketFormContainer extends React.Component {
         })
         const id = this.props.event.id
         this.props.createTicket(this.state, id)
-        //gechecked met 1 of het werkt, dan juiste eventId ophalen
     }
 
     notSubmit = () => {

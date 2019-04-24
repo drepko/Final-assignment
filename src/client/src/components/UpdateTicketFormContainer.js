@@ -17,11 +17,7 @@ class UpdateTicketFormContainer extends React.Component {
 
     onSubmit = (event) => {
         event.preventDefault()
-        // this.setState({
-        //     picture: '',
-        //     price: '',
-        //     description: '',
-        // })
+
         const id = this.props.ticket.id
         console.log('ticket id', id)
         this.props.updateTicket(this.state, id)
