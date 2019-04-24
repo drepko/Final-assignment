@@ -1,6 +1,6 @@
 # Final Assignment Codaisseur Academy
 
-<img src="https://media.giphy.com/media/ir9xmkM2JBGTqird5v/giphy.gif" width="880" height="500" />
+<img src="https://media.giphy.com/media/7E8G1DzfC44610ICzj/giphy.gif" width="880" height="500" />
 
 This app is the result of the final assignment for the Codaisseur Academy. A description of this assignment can be found below. 
 

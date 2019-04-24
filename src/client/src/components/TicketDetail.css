@@ -4,9 +4,8 @@
 }
 
 .ticketdetail{
-    background-image: url('../images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-color:#eaf6f7;
+
 }
 
 .ticketdetail-flex {
