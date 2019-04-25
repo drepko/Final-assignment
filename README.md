@@ -81,18 +81,3 @@ For the frontend, we expect you to properly use React and Redux. Make sure you u
 
 Feel free to add any packages that you like. E.g. [MaterialUI](https://material-ui.com) can be used to set up a nice layout (maybe even responsive!) but there are perfect alternatives as well.
 
-## Hand-in and evaluation
-
-You will receive a time slot for a final evaluation talk on Friday. **Before** you show up on Friday, you should share the code of your assignment (frontend + backend) with us:
-
-* create a **PRIVATE** (this is _very_ important) GitHub repository
-* push your assignment to it regularly (so even if your computer breaks you will have a backup and we can see your progress!)
-* You will be asked to demo your application. Make sure you have everything running on your laptop before the start of the evaluation session.
-
-We don't want you to publish the code of your final assignment on GitHub during the week to prevent people from copying each other's work. 
-
-### Final words
-
-* Show us what you've learned in the past weeks!
-* Have fun
-* Don't forget to sleep
